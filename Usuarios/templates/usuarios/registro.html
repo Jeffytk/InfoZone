@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="register-container">
+    <h2>Registrarse en InfoZone</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+            {{ field }}
+            
+            {% for error in field.errors %}
+                <div class="error" style="color: white;">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn btn-success">Registrarse</button>
+    </form>
+    
+    <p><a href="{% url 'login' %}" style="color: white;">Iniciar Sesion</a></p>
+</div>
+{% endblock %}

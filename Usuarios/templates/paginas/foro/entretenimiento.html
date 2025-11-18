@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Entretenimiento - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloComunidad.css' %}">
+<script src="{% static 'js/entreten.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<section>
+    <div id="posts-view" class="active-view">
+        <h2>Foro de Entretenimiento</h2>
+        <div id="posts-container" class="posts-container"></div>
+        
+        <div class="nuevo-tema">
+            <h3>Crear nuevo tema de discusión</h3>
+            <form id="nuevoPostForm">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" rows="5" required></textarea>
+                
+                <button type="submit">Publicar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="post-view" class="hidden-view">
+        <div id="post-container"></div>
+    </div>
+</section>
+{% endblock %}

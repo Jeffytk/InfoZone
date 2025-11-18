@@ -1,0 +1,265 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-image: url(../img/star.png);
+    background-size: 25%;
+    animation: pan 180s linear infinite;
+    padding: 0;
+    will-change: background-position;
+    color: white;
+}
+
+@keyframes pan {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+}
+header {
+    background: rgb(15, 23, 135);
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.logo {
+    height: 100px;
+    margin-right: -100px;
+    float: left;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+h3 {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+article {
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(15, 23, 135, 0.4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.foro {
+    margin-top: 30px;
+}
+
+.categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.categoria {
+    background: rgba(15, 23, 135, 0.4);
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.categoria h4 {
+    margin-top: 0;
+    color: white;
+    font-size: 20px;
+}
+
+.categoria p {
+    font-size: 0.9em;
+    color: #ddd;
+}
+
+.categoria a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1e90ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.categoria a:hover {
+    background-color: #0077cc;
+}
+
+.nuevo-tema {
+    margin-top: 40px;
+    background: rgba(15, 23, 135, 0.4);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nuevo-tema h3 {
+    margin-top: 0;
+    color: white;
+    font-size: 24px;
+}
+
+.nuevo-tema form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nuevo-tema label {
+    font-weight: bold;
+    color: white;
+}
+
+.nuevo-tema input,
+.nuevo-tema select,
+.nuevo-tema textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+.nuevo-tema button {
+    padding: 10px 15px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.nuevo-tema button:hover {
+    background-color: #0077cc;
+}
+
+footer {
+    background: rgb(15, 23, 135);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+
+}
+
+.comments-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(15, 23, 135, 0.2);
+    border-radius: 8px;
+}
+
+.comment-form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-input, .comment-textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.btn-comment {
+    width: 150px;
+    padding: 8px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-comment:hover {
+    background-color: #357abd;
+}
+
+.comment {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 0;
+}
+
+.comment-meta {
+    font-size: 12px;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.comment-content {
+    font-size: 14px;
+    color: white;
+}
+
+.no-comments {
+    color: #fff;
+    font-style: italic;
+}

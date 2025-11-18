@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Astronomía - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloCategorias.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section>
+            <div id="posts-view">
+                <h2>Tecnología</h2>
+                <p style="color: #b3e5fc;">Discute sobre las últimas tendencias en tecnología, software y hardware.</p>
+
+                <div class="recursos-tecnologia">
+                    <h3>Fuentes tecnológicas recomendadas</h3>
+                    <p style="color: #e1f5fe;">Mantente actualizado con los mejores portales de tecnología:</p>
+
+                    <div class="recursos-grid">
+                        <article class="recurso-card">
+                            <img src="{% static 'img/the_verge_logo.jpg' %}" alt="The Verge" class="recurso-img">
+                            <h4>The Verge</h4>
+                            <p>Noticias sobre gadgets, inteligencia artificial y avances tecnológicos.</p>
+                            <a href="https://www.theverge.com" target="_blank" class="recurso-link">Visitar The Verge
+                                →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/wired-logo.jpg' %}" alt="Wired" class="recurso-img">
+                            <h4>Wired</h4>
+                            <p>Artículos sobre innovación, ciberseguridad y cultura digital.</p>
+                            <a href="https://www.wired.com" target="_blank" class="recurso-link">Visitar Wired →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/xataka-logo.png' %}" alt="Xataka" class="recurso-img">
+                            <h4>Xataka</h4>
+                            <p>Tecnología, análisis de productos y tendencias en español.</p>
+                            <a href="https://www.xataka.com" target="_blank" class="recurso-link">Visitar Xataka →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="posts-container" class="posts-container"></div>
+
+            
+            </div>
+
+            <div id="post-view" style="display: none;">
+                <div id="post-container"></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

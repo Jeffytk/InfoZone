@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}  
+
+{% block title %}Acerca de - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloAcerca.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section>
+    <h1>Acerca de InfoZone</h1>
+    <article style="width: 500px; margin: auto;">
+        <p style="color: white; text-align: justify; font-size: 23px;">
+            InfoZone es una plataforma diseñada para recopilar y organizar información verídica y de calidad sobre diversos temas.
+            En un mundo donde la información es abundante pero no siempre precisa, nos esforzamos por seleccionar y categorizar cuidadosamente las fuentes más relevantes.
+            Desde tecnología y salud hasta historia y astronomía, nuestras categorías cubren una amplia gama de temas para satisfacer tus necesidades de conocimiento.
+            ¡Gracias por visitar InfoZone! Esperamos que encuentres la información que buscas y que esta plataforma te sea de gran utilidad.
+        </p>
+    </article>
+</section>
+{% endblock %}

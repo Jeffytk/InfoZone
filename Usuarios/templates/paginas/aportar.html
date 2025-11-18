@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}  
+
+{% block title %}Aporta tu granito de arena - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloAportar.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="wrap">
+    <h1 style="text-align: center">Aporta tu granito de arena</h1>
+    <form method="post" action="mailto:tacojeffytaco@gmail.com" enctype="text/plain">
+        {% csrf_token %}
+        <input type="text" class="formulario" id="nombre" name="Nombre" placeholder="Nombre:" required>
+        <input type="text" class="formulario" id="correo" name="Correo" placeholder="Correo:" required>
+        <input type="text" class="formulario" id="categoria" name="Categoria" placeholder="Categoría:" required>
+        <textarea class="pagina" id="pagina" name="Pagina" placeholder="Ingresa el enlace de la página que vas a aportar y un texto breve explicando el por qué agregarla:" required></textarea>
+        <input type="submit" value="Enviar correo">
+    </form>
+</div>
+{% endblock %}

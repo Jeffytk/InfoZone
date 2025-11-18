@@ -1,0 +1,262 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-image: url(../img/star.png);
+    background-size: 25%;
+    animation: pan 180s linear infinite;
+    padding: 0;
+    will-change: background-position;
+}
+
+title{
+    float: center;
+
+}
+
+@keyframes pan {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+header {
+    background: rgb(15, 23, 135);
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+
+.logo {
+    height: 100px;
+    margin-right: -100px; 
+    float: left;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex;
+    gap: 30px;
+    ;
+
+}
+
+nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+main {
+    padding: 16px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+h3 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+article {
+
+    padding: 16px;
+    border-radius: 8px;
+    background: rgba(15, 23, 135, .4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+footer {
+    background-color: #3182ce;
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(15, 23, 135, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.login-container h2, .register-container h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-login, .btn-register {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover, .btn-register:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.login-links {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.login-links p {
+    margin: 10px 0;
+    color: white;
+}
+
+.login-links a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+    color: #357abd;
+    text-decoration: underline;
+}
+
+.errorlist {
+    color: #ff6b6b;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.helptext {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+.messages {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.messages li {
+    background: #ff6b6b;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.messages li.success {
+    background: #4BB543;
+}
+
+.messages li.info {
+    background: #3182ce;
+}
+

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Astronomía - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloCategorias.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section>
+        <div id="posts-view">
+            <h2>Astronomía</h2>
+            <p style="color: #b3e5fc;">Explora el universo, comparte descubrimientos y resuelve dudas sobre astronomía.</p>
+            
+            <div class="recursos-astronomia">
+                <h3>Recursos recomendados</h3>
+                <p style="color: #e1f5fe;">Descubre más sobre el cosmos con estas fuentes oficiales:</p>
+                
+                <div class="recursos-grid">
+                    <article class="recurso-card">
+                        <img src="{% static 'img/nasa-logo.jpg' %}" alt="NASA" class="recurso-img">
+                        <h4>NASA</h4>
+                        <p>Información oficial sobre misiones espaciales, descubrimientos y noticias astronómicas.</p>
+                        <a href="https://www.nasa.gov" target="_blank" class="recurso-link">Visitar NASA →</a>
+                    </article>
+                    
+                    <article class="recurso-card">
+                        <img src="{% static 'img/space-com.jpg' %}" alt="Space.com" class="recurso-img">
+                        <h4>Space.com</h4>
+                        <p>Noticias, artículos y guías sobre el universo, cohetes y exploración espacial.</p>
+                        <a href="https://www.space.com" target="_blank" class="recurso-link">Visitar Space.com →</a>
+                    </article>
+                    
+                    <article class="recurso-card">
+                        <img src="{% static 'img/esa-logo.jpg' %}" alt="ESA" class="recurso-img">
+                        <h4>ESA</h4>
+                        <p>La Agencia Espacial Europea ofrece datos sobre misiones, astronomía y tecnología espacial.</p>
+                        <a href="https://www.esa.int" target="_blank" class="recurso-link">Visitar ESA →</a>
+                    </article>
+                </div>
+            </div>
+            
+            <div id="posts-container" class="posts-container"></div>
+        </div>
+        
+        <div id="post-view" class="hidden-view">
+            <div id="post-container"></div>
+        </div>
+    </section>
+</main>
+{% endblock %}

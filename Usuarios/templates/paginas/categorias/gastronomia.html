@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gastronomia - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloCategorias.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section>
+
+            <div id="posts-view">
+                <h2>Gastronomía</h2>
+                <p style="color: #b3e5fc;">Comparte tus conocimientos gastronómicos, recetas y experiencias culinarias.
+                </p>
+
+                <div class="recursos-gastronomia">
+                    <h3>Recursos gastronómicos recomendados</h3>
+                    <p style="color: #e1f5fe;">Explora más sobre el mundo culinario en estas plataformas:</p>
+
+                    <div class="recursos-grid">
+                        <article class="recurso-card">
+                            <img src="{% static 'img/bbc-goodfood.jpg' %}" alt="BBC Good Food" class="recurso-img">
+                            <h4>BBC Good Food</h4>
+                            <p>Recetas, técnicas culinarias y consejos de cocina.</p>
+                            <a href="https://www.bbcgoodfood.com" target="_blank" class="recurso-link">Visitar BBC Good
+                                Food →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/bon-appetit.jpg' %}" alt="Bon Appétit" class="recurso-img">
+                            <h4>Bon Appétit</h4>
+                            <p>Recetas creativas, tendencias gastronómicas y guías culinarias.</p>
+                            <a href="https://www.bonappetit.com" target="_blank" class="recurso-link">Visitar Bon
+                                Appétit →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/directo-paladar.jpg' %}" alt="Directo al Paladar" class="recurso-img">
+                            <h4>Directo al Paladar</h4>
+                            <p>Recetas, restaurantes y novedades del mundo gastronómico en español.</p>
+                            <a href="https://www.directoalpaladar.com" target="_blank" class="recurso-link">Visitar
+                                Directo al Paladar →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="posts-container" class="posts-container"></div>
+
+            </div>
+
+            <!-- Vista de post individual -->
+            <div id="post-view" style="display: none;">
+                <div id="post-container"></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

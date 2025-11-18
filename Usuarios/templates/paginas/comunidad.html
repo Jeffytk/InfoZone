@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Comunidad - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloComunidad.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="comunidad-container">
+    <h2>Comunidad InfoZone</h2>
+    <p style="text-align: center;">
+        Bienvenido a la comunidad, en este apartado se puede discutir sobre los temas que puedes encontrar en nuestra página de categorías.
+    </p>
+
+    <div class="foro">
+        <h3>Foro de Discusión</h3>
+        <div class="categorias">
+            <div class="categoria">
+                <h4>Tecnología</h4>
+                <p>Discute sobre las últimas tendencias en tecnología, software y más.</p>
+                <a href="{% url 'forotecnologia' %}">Ver temas</a>
+            </div>
+            <div class="categoria">
+                <h4>Salud</h4>
+                <p>Comparte consejos, preguntas y experiencias relacionadas con la salud y el bienestar.</p>
+                <a href="{% url 'forosalud' %}">Ver temas</a>
+            </div>
+            <div class="categoria">
+                <h4>Historia</h4>
+                <p>Debate sobre eventos históricos, culturas antiguas y su impacto en el presente.</p>
+                <a href="{% url 'forohistoria' %}">Ver temas</a>
+            </div>
+            <div class="categoria">
+                <h4>Astronomía</h4>
+                <p>Explora el universo, comparte descubrimientos y resuelve dudas sobre astronomía.</p>
+                <a href="{% url 'foroastronomia' %}">Ver temas</a>
+            </div>
+            <div class="categoria">
+                <h4>Entretenimiento</h4>
+                <p>Discute sobre lo último en series, celebridades u otros medios.</p>
+                <a href="{% url 'foroentretenimiento' %}">Ver temas</a>
+            </div>
+            <div class="categoria">
+                <h4>Gastronomía</h4>
+                <p>Comparte tus conocimientos gastronómicos, busca o comparte recetas que conozcas.</p>
+                <a href="{% url 'forogastronomia' %}">Ver temas</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

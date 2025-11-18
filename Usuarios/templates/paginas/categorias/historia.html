@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Historia - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloCategorias.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section>
+            <div id="posts-view">
+                <h2>Historia</h2>
+                <p style="color: #b3e5fc;">Debate sobre eventos históricos, culturas antiguas y su impacto en el
+                    presente.</p>
+
+                <div class="recursos-historia">
+                    <h3>Recursos históricos recomendados</h3>
+                    <p style="color: #e1f5fe;">Explora más sobre el fascinante mundo de la historia en estas
+                        plataformas:</p>
+
+                    <div class="recursos-grid">
+                        <article class="recurso-card">
+                            <img src="{% static 'img/natgeo-historia.jpg' %}" alt="National Geographic Historia"
+                                class="recurso-img">
+                            <h4>National Geographic Historia</h4>
+                            <p>Artículos sobre civilizaciones, guerras y descubrimientos históricos.</p>
+                            <a href="https://historia.nationalgeographic.com.es" target="_blank"
+                                class="recurso-link">Visitar NatGeo Historia →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/bbc-history.jpg' %}" alt="BBC History" class="recurso-img">
+                            <h4>BBC History</h4>
+                            <p>Documentales, artículos y biografías de eventos históricos.</p>
+                            <a href="https://www.bbc.co.uk/history" target="_blank" class="recurso-link">Visitar BBC
+                                History →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/ancient-history.jpg' %}" alt="Ancient History Encyclopedia"
+                                class="recurso-img">
+                            <h4>Ancient History Encyclopedia</h4>
+                            <p>Información detallada sobre culturas antiguas y arqueología.</p>
+                            <a href="https://www.ancient.eu" target="_blank" class="recurso-link">Visitar Ancient
+                                History →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="posts-container" class="posts-container"></div>
+
+
+            </div>
+
+            <div id="post-view" style="display: none;">
+                <div id="post-container"></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

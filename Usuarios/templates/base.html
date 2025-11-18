@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}InfoZone{% endblock %}</title>
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/logintilo.css' %}">
+    {% block extra_css %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-left">
+                <img src="{% static 'img/logo.png' %}" class="logo" alt="Logo InfoZone">
+                <h1>InfoZone</h1>
+            </div>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+                <li><a href="{% url 'acerca' %}">Acerca de</a></li>
+                <li><a href="{% url 'aportar' %}">Aportar</a></li>
+                <li><a href="{% url 'comunidad' %}">Comunidad</a></li>
+            </ul>
+
+            <ul class="nav-right" style="text-align: right;">
+                {% if user.is_authenticated %}
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">{{ user.username }} ▼</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'perfil' %}">Mi Perfil</a>
+                            <a href="{% url 'logout' %}">Cerrar Sesión</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+                    <li><a href="{% url 'registro' %}">Registrarse</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    {% if messages %}
+        <div class="messages-container">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

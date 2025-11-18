@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Entretenimiento - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloCategorias.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section>
+
+            <div id="posts-view">
+                <h2>Entretenimiento</h2>
+                <p style="color: #b3e5fc;">Discute sobre lo último en series, películas, música y videojuegos.</p>
+
+                <div class="recursos-entretenimiento">
+                    <h3>Recursos recomendados</h3>
+                    <p style="color: #e1f5fe;">Explora más contenido de entretenimiento en estas plataformas:</p>
+
+                    <div class="recursos-grid">
+                        <article class="recurso-card">
+                            <img src="{% static 'img/imdb-logo.jpg' %}" alt="IMDb" class="recurso-img">
+                            <h4>IMDb</h4>
+                            <p>Base de datos de películas, series, reseñas y noticias de Hollywood.</p>
+                            <a href="https://www.imdb.com" target="_blank" class="recurso-link">Visitar IMDb →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/rolling-stone-logo.jpg' %}" alt="Rolling Stone" class="recurso-img">
+                            <h4>Rolling Stone</h4>
+                            <p>Música, cine, cultura pop y entrevistas con celebridades.</p>
+                            <a href="https://www.rollingstone.com" target="_blank" class="recurso-link">Visitar Rolling
+                                Stone →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/ign-logo.jpg' %}" alt="IGN" class="recurso-img">
+                            <h4>IGN</h4>
+                            <p>Reseñas y noticias sobre videojuegos, películas y series.</p>
+                            <a href="https://www.ign.com" target="_blank" class="recurso-link">Visitar IGN →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="posts-container" class="posts-container"></div>
+
+            </div>
+
+
+            <div id="post-view" style="display: none;">
+                <div id="post-container"></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Salud - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloCategorias.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section>
+            <div id="posts-view">
+                <h2>Foro de Salud</h2>
+                <p style="color: #b3e5fc;">Comparte consejos, preguntas y experiencias relacionadas con la salud y el
+                    bienestar.</p>
+
+                <div class="recursos-salud">
+                    <h3>Recursos de salud confiables</h3>
+                    <p style="color: #e1f5fe;">Consulta información médica verificada en estas fuentes autorizadas:</p>
+
+                    <div class="recursos-grid">
+                        <article class="recurso-card">
+                            <img src="{% static 'img/oms-logo.jpg' %}" alt="Organización Mundial de la Salud"
+                                class="recurso-img">
+                            <h4>OMS</h4>
+                            <p>Información médica oficial y recomendaciones de salud global.</p>
+                            <a href="https://www.who.int/es" target="_blank" class="recurso-link">Visitar OMS →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/medlineplus-logo.jpg' %}" alt="MedlinePlus" class="recurso-img">
+                            <h4>MedlinePlus</h4>
+                            <p>Base de datos médica con información sobre enfermedades y tratamientos.</p>
+                            <a href="https://medlineplus.gov" target="_blank" class="recurso-link">Visitar MedlinePlus
+                                →</a>
+                        </article>
+
+                        <article class="recurso-card">
+                            <img src="{% static 'img/webmd-logo.jpg' %}" alt="WebMD" class="recurso-img">
+                            <h4>WebMD</h4>
+                            <p>Síntomas, tratamientos y consejos de salud verificados por expertos.</p>
+                            <a href="https://www.webmd.com" target="_blank" class="recurso-link">Visitar WebMD →</a>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="posts-container" class="posts-container"></div>
+
+                
+            </div>
+
+            <div id="post-view" style="display: none;">
+                <div id="post-container"></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

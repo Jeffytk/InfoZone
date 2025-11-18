@@ -1,0 +1,124 @@
+* {
+    padding: 0%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+header {
+    background: rgb(15, 23, 135);
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+.logo {
+    height: 100px; 
+    margin-right: -100px;
+    float: left;
+}
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+
+}
+h1 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-flex;
+    gap: 30px;
+    ;
+
+}
+
+nav a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-image: url(../img/star.png);
+    background-size: 25%;
+    animation: pan 180s linear infinite;
+    padding: 0;
+    will-change: background-position;
+}
+
+@keyframes pan {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.division {
+
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+
+}
+
+form {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #d0cbcd;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgb(255, 7, 7);
+    border-top: 4px solid #536DFe;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: block;
+    justify-content: space-between;
+}
+
+form input[type="text"],
+form input[type="correo"],
+form input[type="mensaje"],
+form textarea {
+    border: 10px solid #d0cbcd;
+    border-radius: 10px;
+    padding: 16px;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    font-family: fantasy;
+    font-size: 1em;
+    color: #141914;
+    border-color: black;
+    border-width: 5px;
+}
+
+form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 300%;
+    min-height: 150%;
+
+}
+
+form input[type="submit"] {
+    height: 30%;
+    float: right;
+}
