@@ -59,5 +59,13 @@ urlpatterns = [
              template_name='usuarios/password_reset_complete.html'
          ), 
          name='password_reset_complete'),
+
+
+
+    path('foroastronomia/', views.foroastronomia_view, name='foroastronomia'),
+    path('foroastronomia/<int:post_id>/', views.detalle_post_view, name='detalle_post'),
+    path('forotecnologia/', views.forotecnologia_view, name='forotecnologia'),
+    path('forotecnologia/<int:post_id>/', views.detalle_post_view, name='detalle_post'),
+    path('editar-perfil/', views.editar_perfil, name='editar_perfil'),
     
 ]

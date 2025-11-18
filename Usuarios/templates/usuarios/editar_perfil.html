@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block title %}Registrarse - InfoZone{% endblock %}
-
+{% load static%}
+{% block title %}Editar Perfil - InfoZone{% endblock %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="login-container">
-    <h2>Registrarse en InfoZone</h2>
-
+    <h2>Editar Perfil</h2>
     <form method="post">
         {% csrf_token %}
         {% for field in form %}
         <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
             {{ field }}
             {% if field.errors %}
             <ul class="errorlist">
@@ -25,12 +23,10 @@
             {% endif %}
         </div>
         {% endfor %}
-
-        <button type="submit" class="btn-login">Registrarse</button>
+        <button type="submit" class="btn-login">Guardar Cambios</button>
     </form>
-
     <div class="login-links">
-        <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Iniciar Sesión</a></p>
+        <p><a href="{% url 'perfil' %}">Regresar al Perfil</a></p>
     </div>
 </div>
 {% endblock %}

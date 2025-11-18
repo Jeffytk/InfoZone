@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tema: {{ post.titulo }} - InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/EstiloComunidad.css' %}">
+{% endblock %}
+
+{% block content %}
+<article>
+    <h2>{{ post.titulo }}</h2>
+    <div class="post-meta">
+        <span class="author">{{ post.autor.username }}</span>
+        <span class="date">{{ post.fecha|date:"d M Y H:i" }}</span>
+    </div>
+    <div class="post-content">
+        <p>{{ post.mensaje|linebreaks }}</p>
+    </div>
+</article>
+
+<section class="comments-section">
+    <h3>Comentarios</h3>
+    {% for comentario in comentarios %}
+        <div class="comment">
+            <div class="comment-meta">
+                <span class="comment-author">{{ comentario.autor.username }}</span>
+                <span class="comment-date">{{ comentario.fecha|date:"d M Y H:i" }}</span>
+            </div>
+            <div class="comment-content">
+                <p>{{ comentario.contenido|linebreaks }}</p>
+            </div>
+        </div>
+    {% empty %}
+        <p class="no-comments">No hay comentarios aún.</p>
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+    <form method="post" class="comment-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn-comment">Agregar comentario</button>
+    </form>
+    {% else %}
+    <p style="color:white;">Debes iniciar sesión para comentar. <a href="{% url 'login' %}">Inicia aquí</a></p>
+    {% endif %}
+</section>
+{% endblock %}

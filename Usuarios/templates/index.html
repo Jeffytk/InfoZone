@@ -1,157 +1,58 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>InfoZone</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}"> 
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-left">
-                <img src="{% static 'img/logo.png' %}" class="logo" alt="Logo InfoZone">
-                <h1>InfoZone</h1>
-            </div>
-            
-            <nav class="nav-primary">
-                <ul class="main-nav">
-                    <li><a href="{% url 'index' %}">Inicio</a></li>
-                <li><a href="{% url 'acerca' %}">Acerca de</a></li>
-                <li><a href="{% url 'aportar' %}">Aportar</a></li>
-                <li><a href="{% url 'comunidad' %}">Comunidad</a></li>
-                </ul>
-                
-                <div class="user-menu">
-                    <div class="user-icon" id="userIcon">
-                        {% if user.is_authenticated %}
-                            {{ user.username|first|upper }}
-                        {% else %}
-                            👤
-                        {% endif %}
-                    </div>
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        {% if user.is_authenticated %}
-                            <div class="user-welcome">
-                                Hola, {{ user.username }}
-                            </div>
-                            <a href="{% url 'perfil' %}">Mi Perfil</a>
-                            <a href="{% url 'logout' %}" class="logout-link">Cerrar Sesión</a>
-                        {% else %}
-                            <a href="{% url 'login' %}">Iniciar Sesión</a>
-                            <a href="{% url 'registro' %}">|Registrarse</a>
-                            <a href="{% url 'password_reset' %}">|Recuperar Contraseña</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+{% extends 'base.html' %}
+{% load static %}
 
-    {% if messages %}
-    <div class="messages-container">
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
-        {% endfor %}
+{% block title %}InfoZone{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Categorías</h2>
+    <div class="grid">
+        <article>
+            <a href="{% url 'tecnologia' %}">
+                <img src="{% static 'img/tecnologia.jpg' %}" alt="Tecnología"/>
+            </a>
+            <h3>Tecnología</h3>
+            <p>Sobre las tecnologías que nos rodean hoy</p>
+        </article>
+        <article>
+            <a href="{% url 'salud' %}">
+                <img src="{% static 'img/salud.png' %}" alt="Salud"/>
+            </a>
+            <h3>Salud</h3>
+            <p>Medicina y enfermedades</p>
+        </article>
+        <article>
+            <a href="{% url 'historia' %}">
+                <img src="{% static 'img/historia.png' %}" alt="Historia"/>
+            </a>
+            <h3>Historia</h3>
+            <p>Los eventos que marcaron nuestro presente</p>
+        </article>
+        <article>
+            <a href="{% url 'entretenimiento' %}">
+                <img src="{% static 'img/entretenimiento.jpg' %}" alt="Entretenimiento"/>
+            </a>
+            <h3>Entretenimiento</h3>
+            <p>Distintas formas de entretenimiento</p>
+        </article>
+        <article>
+            <a href="{% url 'gastronomia' %}">
+                <img src="{% static 'img/gastronomia.jpg' %}" alt="Gastronomía"/>
+            </a>
+            <h3>Gastronomía</h3>
+            <p>Recetas e información sobre alimentos</p>
+        </article>
+        <article>
+            <a href="{% url 'astronomia' %}">
+                <img src="{% static 'img/astronomia.png' %}" alt="Astronomía"/>
+            </a>
+            <h3>Astronomía</h3>
+            <p>Al infinito y más allá</p>
+        </article>
     </div>
-    {% endif %}
-
-    <main>
-    <section>
-        <h2>Categorías</h2>
-        <div class="grid">
-            <article>
-                <a href="{% url 'tecnologia' %}">
-                    <img src="{% static 'img/tecnologia.jpg' %}" alt="Tecnología"/>
-                </a>
-                <h3>Tecnología</h3>
-                <p style="color: white;">Sobre las tecnologías que nos rodean hoy</p>
-            </article>
-            <article>
-                <a href="{% url 'salud' %}">
-                    <img src="{% static 'img/salud.png' %}" alt="Salud"/>
-                </a>
-                <h3>Salud</h3>
-                <p style="color: white;">Medicina y enfermedades</p>
-            </article>
-            <article>
-                <a href="{% url 'historia' %}">
-                    <img src="{% static 'img/historia.png' %}" alt="Historia"/>
-                </a>
-                <h3>Historia</h3>
-                <p style="color: white;">Los eventos que marcaron nuestro presente</p>
-            </article>
-            <article>
-                <a href="{% url 'entretenimiento' %}">
-                    <img src="{% static 'img/entretenimiento.jpg' %}" alt="Entretenimiento"/>
-                </a>
-                <h3>Entretenimiento</h3>
-                <p style="color: white;">Distintas formas de entretenimiento</p>
-            </article>
-            <article>
-                <a href="{% url 'gastronomia' %}">
-                    <img src="{% static 'img/gastronomia.jpg' %}" alt="Gastronomía"/>
-                </a>
-                <h3>Gastronomía</h3>
-                <p style="color: white;">Recetas e información sobre alimentos</p>
-            </article>
-            <article>
-                <a href="{% url 'astronomia' %}">
-                    <img src="{% static 'img/astronomia.png' %}" alt="Astronomía"/>
-                </a>
-                <h3>Astronomía</h3>
-                <p style="color: white;">Al infinito y más allá</p>
-            </article>
-        </div>
-    </section>
-</main>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const userIcon = document.getElementById('userIcon');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-            let isOpen = false;
-            
-            userIcon.addEventListener('click', function(e) {
-                e.stopPropagation();
-                isOpen = !isOpen;
-                dropdownMenu.style.display = isOpen ? 'block' : 'none';
-                
-                this.style.transform = isOpen ? 'scale(1.1)' : 'scale(1)';
-            });
-            
-            document.addEventListener('click', function() {
-                if (isOpen) {
-                    dropdownMenu.style.display = 'none';
-                    userIcon.style.transform = 'scale(1)';
-                    isOpen = false;
-                }
-            });
-            
-            dropdownMenu.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-            
-            userIcon.addEventListener('mouseenter', function() {
-                if (!isOpen) {
-                    this.style.transform = 'scale(1.1)';
-                    this.style.cursor = 'pointer';
-                }
-            });
-            
-            userIcon.addEventListener('mouseleave', function() {
-                if (!isOpen) {
-                    this.style.transform = 'scale(1)';
-                }
-            });
-            
-            userIcon.style.cursor = 'pointer';
-            userIcon.title = 'Menú de usuario';
-        });
-    </script>
-</body>
-</html>
+</section>
+{% endblock %}

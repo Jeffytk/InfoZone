@@ -5,31 +5,80 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/EstiloComunidad.css' %}">
-<script src="{% static 'js/entreten.js' %}" defer></script>
+<style>
+    .btn-mostrar-form {
+        margin-top: 2em;
+        padding: 0.6em 1.8em;
+        font-size: 1.1em;
+        cursor: pointer;
+        background: #506ee3;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        transition: background 0.3s, transform 0.2s;
+        box-shadow: 0 2px 8px #ccc;
+    }
+    .btn-mostrar-form:hover {
+        background: #304ec7;
+        transform: scale(1.04);
+    }
+</style>
 {% endblock %}
 
 {% block content %}
 <section>
-    <div id="posts-view" class="active-view">
-        <h2>Foro de Entretenimiento</h2>
-        <div id="posts-container" class="posts-container"></div>
-        
-        <div class="nuevo-tema">
-            <h3>Crear nuevo tema de discusión</h3>
-            <form id="nuevoPostForm">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" required>
-                
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" rows="5" required></textarea>
-                
-                <button type="submit">Publicar</button>
-            </form>
-        </div>
+    <h2>Foro de Entretenimiento</h2>
+
+    <div class="posts-container">
+        {% for post in posts %}
+        <article class="post">
+            <h3><a href="{% url 'detalle_post' post.id %}">{{ post.titulo }}</a></h3>
+            <div class="post-meta">
+                <span class="author">{{ post.autor.username }}</span>
+                <span class="date">{{ post.fecha|date:"d M Y H:i" }}</span>
+            </div>
+            <div class="post-content">
+                <p>{{ post.mensaje|linebreaks }}</p>
+            </div>
+        </article>
+        {% empty %}
+        <p>No hay posts aún. ¡Sé el primero en publicar!</p>
+        {% endfor %}
     </div>
 
-    <div id="post-view" class="hidden-view">
-        <div id="post-container"></div>
-    </div>
+    {% if user.is_authenticated %}
+        <button class="btn-mostrar-form" id="abrirFormPost">Añadir post</button>
+        <div class="nuevo-tema" style="display:none;">
+            <h3>Crear nuevo tema de discusión</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn-mostrar-form" style="background:#219e50;">Publicar</button>
+            </form>
+            <button type="button" class="btn-mostrar-form" id="cerrarFormPost" style="background: #c73434; margin-top:10px;">Cerrar</button>
+        </div>
+    {% else %}
+        <p>Debes iniciar sesión para crear un nuevo tema. <a href="{% url 'login' %}">Inicia aquí</a></p>
+    {% endif %}
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const abrir = document.getElementById('abrirFormPost');
+    const cerrar = document.getElementById('cerrarFormPost');
+    const formDiv = document.querySelector('.nuevo-tema');
+    if (abrir && formDiv) {
+        abrir.addEventListener('click', function() {
+            formDiv.style.display = 'block';
+            abrir.style.display = 'none';
+        });
+    }
+    if (cerrar && formDiv) {
+        cerrar.addEventListener('click', function() {
+            formDiv.style.display = 'none';
+            abrir.style.display = 'inline-block';
+        });
+    }
+});
+</script>
 {% endblock %}
